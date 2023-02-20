@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="choixDisplay">
+      <p>Who the fuck are you?</p>
+      <div class="choixJoueur" id="choixJoueur"></div>
+    </div>
+
+    <div id="contentJeu">
+      <div id="persoContainer"></div>
+      <div id="modifContainer">
+        <div>
+          <!-----------------------------------------------------modification de la santé-->
+          <h1>SANTE</h1>
+          <input type="text" placeholder="PV restant" name="" id="vie" />
+          <p>indiquer le nombre de pv restant</p>
+          <br />
+          <input
+            type="text"
+            placeholder="BLESSURE GRAVE"
+            name=""
+            id="blessure"
+          />
+          <p>indiquer le nombre de blessures graves restantes</p>
+          <br />
+          <input
+            type="text"
+            placeholder="POINT DE FOLIE"
+            name=""
+            id="blessure"
+          />
+          <p>indiquer le nombre de PF restant</p>
+          <br />
+          <input type="text" placeholder="PC" name="" id="blessure" />
+          <p>indiquer le nombre de PC restant</p>
+          <br />
+          <input type="text" placeholder="dés de vie" name="" id="desVie" />
+          <p>indiquer le montant de des de vie</p>
+        </div>
+        <!-----------------------------------------------------modification de l'inventaire-->
+        <div>
+          <h1>INVENTAIRE</h1>
+          <input
+            type="text"
+            placeholder="AJOUTER A L'INVENTAIRE"
+            name=""
+            id="inventaire"
+          />
+          <p>notez le nom de l'objet à ajouter</p>
+          <p>recopiez le nom de l'objet à supprimer de l'inventaire</p>
+          <br />
+          <input type="text" placeholder="ARGENT DEPENSé" name="" id="argent" />
+          <p>indiquer le nombre de $ restants</p>
+        </div>
+        <!-----------------------------------------------------modification des caracteristiques-->
+        <input type="text" placeholder="VALEUR FORCE" name="" id="force" />
+        <p>indiquer le nombre de $ restants</p>
+        <!-----------------------------------------------------modification de l'inventaire-->
+        <!------------------------------------------------------------------BOUTON VALIDATION-->
+
+        <button id="vie--button">VALIDER</button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
