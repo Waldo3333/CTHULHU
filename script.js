@@ -352,7 +352,6 @@ joueurChoisi.forEach(bouton => {
     const attaqueDistMod2Input = document.getElementById("attaqueDistMod2");
     const attaqueMagiModInput = document.getElementById("attaqueMagiMod");
     const attaqueMagiMod2Input = document.getElementById("attaqueMagiMod2");
-    const descript = personnage[persoIndex].descritpion;
     const gun = personnage[persoIndex].arme;
     const capacity = personnage[persoIndex].capacite;
     const PC = personnage[persoIndex].PC;
