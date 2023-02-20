@@ -6,6 +6,7 @@ body {
   font-family: "Edu VIC WA NT Beginner", cursive;
   font-weight: 400;
   font-size: 14px;
+  text-transform: uppercase;
 }
 /*--------------------------choix du joueur*/
 #contentJeu {
