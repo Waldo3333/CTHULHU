@@ -364,15 +364,17 @@ function affichJoueur() {
                 </div>
 
                 <div class="infoHeader flexAround">
-                    <p class="infoHeader--niveau">Niveau : ${
-                      personnage[persoIndex].niveau
-                    }</p>
-                    <p class="infoHeader--des">Dés vie: ${
-                      personnage[persoIndex].déVie
-                    }</p>
-                    <p class="infoHeader--pvRestant">Point de vie restant : ${
-                      personnage[persoIndex].PVrestant
-                    }</p>
+                    <div class="infoHeader--niveau"> 
+                      <p >Niveau : ${personnage[persoIndex].niveau}</p>
+                    </div>
+                    <div class="infoHeader--des"> 
+                        <p>Dés vie: ${personnage[persoIndex].déVie}</p>
+                    </div>
+                    <div class="infoHeader--pvRestant"> 
+                       <p>Point de vie restant : ${
+                         personnage[persoIndex].PVrestant
+                       }</p>
+                    </div>
                 </div>
                 
                 <div class="infoHeaderDown flexAround">   

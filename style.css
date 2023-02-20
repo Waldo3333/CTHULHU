@@ -13,6 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
+  overflow: hidden;
 }
 #choixDisplay {
   width: 100vw;
@@ -44,12 +45,18 @@ body {
 .name p {
   font-size: 22px;
 }
+.header--button {
+  margin-bottom: 20px;
+}
 
 .header--button--button {
   font-family: "Edu VIC WA NT Beginner", cursive;
   text-transform: uppercase;
   width: 33vw;
   height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
 }
 #modifContainer {
   display: none;
@@ -66,8 +73,33 @@ body {
 
 .infoHeader {
   align-items: center;
-  background-color: rgb(180, 149, 109);
+
   height: 40px;
+}
+.infoHeader {
+  margin-bottom: 30px;
+}
+.infoHeader--niveau {
+  height: 50px;
+  width: 100px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: rgb(113, 90, 61);
+}
+.infoHeader--pvRestant {
+  height: 50px;
+  width: max-content;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 30px;
+  background-color: rgb(76, 181, 44);
+}
+.infoHeader--des {
+  width: 100px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: rgb(113, 90, 61);
 }
 .infoHeaderDown {
   align-items: center;
