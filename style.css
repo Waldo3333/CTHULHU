@@ -156,3 +156,23 @@ body {
   display: flex;
   justify-content: space-around;
 }
+/*----------------------------------------------------------------PAGE MODIFICATION*/
+#modifContainer {
+  text-align: center;
+  justify-content: center;
+}
+#modifContainer h1 {
+  color: blueviolet;
+}
+#modifContainer h2 {
+  font-size: 22px;
+  color: rgb(145, 86, 201);
+}
+#vie--button {
+  background-color: rgb(47, 169, 47);
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}

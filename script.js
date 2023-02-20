@@ -312,15 +312,236 @@ const joueurChoisi = document.querySelectorAll(".joueur");
 const affichInfo = document.getElementById("persoContainer");
 
 contentJeu = "";
-
+//----------------------------------------------------------------------- DEBUT AFFICHAGE INFOS
 joueurChoisi.forEach(bouton => {
   bouton.addEventListener("click", function () {
     persoIndex = this.id;
     choixJoueurDisplay.style.display = "none";
     affichJoueur();
-  });
+    //-----------------------------------------------------------------------MODIFICATION INFOS
+    const modifDisplay = document.getElementById("modifContainer");
+    const persoDisplay = document.getElementById("persoContainer");
+    const validButton = document.getElementById("vie--button");
+    const vieInput = document.getElementById("vie");
+    const argentInput = document.getElementById("argent");
+    const forceInput = document.getElementById("force");
+    const dexteInput = document.getElementById("dexte");
+    const constInput = document.getElementById("constitution");
+    const intelInput = document.getElementById("intelligence");
+    const perceInput = document.getElementById("perception");
+    const chariInput = document.getElementById("charisme");
+    const forceModInput = document.getElementById("forceMod");
+    const dexteModInput = document.getElementById("dexteMod");
+    const constModInput = document.getElementById("constitutionMod");
+    const intelModInput = document.getElementById("intelligenceMod");
+    const perceModInput = document.getElementById("perceptionMod");
+    const chariModInput = document.getElementById("charismeMod");
+    const forceMod2Input = document.getElementById("forceMod2");
+    const dexteMod2Input = document.getElementById("dexteMod2");
+    const constMod2Input = document.getElementById("constitutionMod2");
+    const intelMod2Input = document.getElementById("intelligenceMod2");
+    const perceMod2Input = document.getElementById("perceptionMod2");
+    const chariMod2Input = document.getElementById("charismeMod2");
+    const desVieInput = document.getElementById("desVie");
+    const blessureInput = document.getElementById("blessure");
+    const niveauInput = document.getElementById("niveau");
+    const inventaireInput = document.getElementById("inventaire");
+    const attaqueModInput = document.getElementById("attaqueMod");
+    const attaqueMod2Input = document.getElementById("attaqueMod2");
+    const attaqueDistModInput = document.getElementById("attaqueDistMod");
+    const attaqueDistMod2Input = document.getElementById("attaqueDistMod2");
+    const attaqueMagiModInput = document.getElementById("attaqueMagiMod");
+    const attaqueMagiMod2Input = document.getElementById("attaqueMagiMod2");
+    const descript = personnage[persoIndex].descritpion;
+    const gun = personnage[persoIndex].arme;
+    const capacity = personnage[persoIndex].capacite;
+    const PC = personnage[persoIndex].PC;
+    const att = personnage[persoIndex].attaque;
+    const def = personnage[persoIndex].defence;
+    const cara = personnage[persoIndex].caracteristique;
 
-  //------------------------------------------afficher caracteristique
+    validButton.addEventListener("click", function () {
+      //---------------------------------------------PV
+      if (vieInput.value !== "") {
+        personnage[persoIndex].PVrestant = vieInput.value;
+        vieInput.value = "";
+      }
+      //---------------------------------------------niveau
+      if (niveauInput.value !== "") {
+        personnage[persoIndex].niveau = niveauInput.value;
+        niveauInput.value = "";
+      }
+
+      //---------------------------------------------dé vie
+      if (desVieInput.value !== "") {
+        personnage[persoIndex].déVie = desVieInput.value;
+        desVieInput.value = "";
+      }
+      //---------------------------------------------blessure
+      if (blessureInput.value !== "") {
+        personnage[persoIndex].blessureGrave = blessureInput.value;
+        blessureInput.value = "";
+      }
+      //---------------------------------------------inventaire
+      if (inventaireInput.value !== "") {
+        let existeDeja = false;
+
+        for (let i = 0; i < personnage[persoIndex].inventaire.length; i++) {
+          if (
+            personnage[persoIndex].inventaire[i].toLowerCase ===
+            inventaireInput.value
+          ) {
+            existeDeja = true;
+            personnage[persoIndex].inventaire.splice([i], 1);
+            inventaireInput.value = "";
+            break;
+          }
+        }
+        if (existeDeja) {
+          console.log("Déjà présent dans l'inventaire !");
+          inventaireInput.value = "";
+        } else {
+          personnage[persoIndex].inventaire.push(inventaireInput.value);
+          inventaireInput.value = "";
+        }
+      }
+      //---------------------------------------------ARGENT
+      if (argentInput.value !== "") {
+        personnage[persoIndex].argent = argentInput.value;
+        argentInput.value = "";
+      }
+      //--------------------------------------------------------------------caracteristique
+
+      //-----------------------------------------------VALEUR
+      //----------------------------------------force
+      if (forceInput.value !== "") {
+        cara.force.valeur = forceInput.value;
+        forceInput.value = "";
+      }
+      //----------------------------------------dexterite
+      if (dexteInput.value !== "") {
+        cara.dexterite.valeur = dexteInput.value;
+        dexteInput.value = "";
+      }
+      //----------------------------------------constitution
+      if (constInput.value !== "") {
+        cara.constitution.valeur = constInput.value;
+        constInput.value = "";
+      }
+      //----------------------------------------intelligence
+      if (intelInput.value !== "") {
+        cara.intelligence.valeur = intelInput.value;
+        intelInput.value = "";
+      }
+      //----------------------------------------perception
+      if (perceInput.value !== "") {
+        cara.perception.valeur = perceInput.value;
+        perceInput.value = "";
+      }
+      //----------------------------------------charisme
+      if (chariInput.value !== "") {
+        cara.charisme.valeur = chariInput.value;
+        chariInput.value = "";
+      }
+      //-----------------------------------------------MOD1
+      //----------------------------------------force
+      if (forceModInput.value !== "") {
+        cara.force.mod = forceModInput.value;
+        forceModInput.value = "";
+      }
+      //----------------------------------------dexterite
+      if (dexteModInput.value !== "") {
+        cara.dexterite.mod = dexteModInput.value;
+        dexteModInput.value = "";
+      }
+      //----------------------------------------constitution
+      if (constModInput.value !== "") {
+        cara.constitution.mod = constModInput.value;
+        constModInput.value = "";
+      }
+      //----------------------------------------intelligence
+      if (intelModInput.value !== "") {
+        cara.intelligence.mod = intelModInput.value;
+        intelModInput.value = "";
+      }
+      //----------------------------------------perception
+      if (perceModInput.value !== "") {
+        cara.perception.mod = perceModInput.value;
+        perceModInput.value = "";
+      }
+      //----------------------------------------charisme
+      if (chariModInput.value !== "") {
+        cara.charisme.mod = chariModInput.value;
+        chariModInput.value = "";
+      }
+      //-----------------------------------------------MOD2
+      //----------------------------------------force
+      if (forceMod2Input.value !== "") {
+        cara.force.mod2 = forceMod2Input.value;
+        forceMod2Input.value = "";
+      }
+      //----------------------------------------dexterite
+      if (dexteMod2Input.value !== "") {
+        cara.dexterite.mod2 = dexteMod2Input.value;
+        dexteMod2Input.value = "";
+      }
+      //----------------------------------------constitution
+      if (constMod2Input.value !== "") {
+        cara.constitution.mod2 = constMod2Input.value;
+        constMod2Input.value = "";
+      }
+      //----------------------------------------intelligence
+      if (intelMod2Input.value !== "") {
+        cara.intelligence.mod2 = intelMod2Input.value;
+        intelMod2Input.value = "";
+      }
+      //----------------------------------------perception
+      if (perceMod2Input.value !== "") {
+        cara.perception.mod2 = perceMod2Input.value;
+        perceMod2Input.value = "";
+      }
+      //----------------------------------------charisme
+      if (chariMod2Input.value !== "") {
+        cara.charisme.mod2 = chariMod2Input.value;
+        chariMod2Input.value = "";
+      }
+
+      //---------------------------------------------------------ATTAQUE
+      //---------------------------------------------contact
+      if (attaqueModInput.value !== "") {
+        att.contact.mod1 = attaqueModInput.value;
+        attaqueModInput.value = "";
+      }
+      if (attaqueMod2Input.value !== "") {
+        att.contact.mod2 = attaqueMod2Input.value;
+        attaqueMod2Input.value = "";
+      }
+      //---------------------------------------------distance
+      if (attaqueDistModInput.value !== "") {
+        att.distance.mod1 = attaqueDistModInput.value;
+        attaqueDistModInput.value = "";
+      }
+      if (attaqueDistMod2Input.value !== "") {
+        att.distance.mod2 = attaqueDistMod2Input.value;
+        attaqueDistMod2Input.value = "";
+      }
+      //---------------------------------------------magique
+      if (attaqueMagiModInput.value !== "") {
+        att.magique.mod1 = attaqueMagiModInput.value;
+        attaqueMagiModInput.value = "";
+      }
+      if (attaqueMagiMod2Input.value !== "") {
+        att.magique.mod2 = attaqueMagiMod2Input.value;
+        attaqueMagiMod2Input.value = "";
+      }
+      //---------------------------------------------defence
+      affichJoueur();
+      modifDisplay.style.display = "none";
+      persoDisplay.style.display = "block";
+    });
+
+    //------------------------------------------afficher caracteristique
+  });
 });
 //----------------------------------------------------------------------- FONCTION AFFICHAGE INFOS
 function affichJoueur() {
@@ -561,53 +782,3 @@ function affichJoueur() {
     }
   });
 }
-//-----------------------------------------------------------------------MODIFICATION INFOS
-const modifDisplay = document.getElementById("modifContainer");
-const persoDisplay = document.getElementById("persoContainer");
-const validButton = document.getElementById("vie--button");
-const vieInput = document.getElementById("vie");
-const argentInput = document.getElementById("argent");
-const forceInput = document.getElementById("force");
-const desVieInput = document.getElementById("desVie");
-const inventaireInput = document.getElementById("inventaire");
-
-validButton.addEventListener("click", function () {
-  //---------------------------------------------PV
-  if (vieInput.value !== "") {
-    personnage[persoIndex].PVrestant = vieInput.value;
-  }
-  //---------------------------------------------ARGENT
-  if (argentInput.value !== "") {
-    personnage[persoIndex].argent = argentInput.value;
-  }
-  //---------------------------------------------dé vie
-  if (desVieInput.value !== "") {
-    personnage[persoIndex].déVie = desVieInput.value;
-  }
-  //---------------------------------------------inventaire
-  if (inventaireInput.value !== "") {
-    let existeDeja = false;
-
-    for (let i = 0; i < personnage[persoIndex].inventaire.length; i++) {
-      if (
-        personnage[persoIndex].inventaire[i].toLowerCase ===
-        inventaireInput.value
-      ) {
-        existeDeja = true;
-        personnage[persoIndex].inventaire.splice([i], 1);
-        inventaireInput.value = "";
-        break;
-      }
-    }
-    if (existeDeja) {
-      console.log("Déjà présent dans l'inventaire !");
-      inventaireInput.value = "";
-    } else {
-      personnage[persoIndex].inventaire.push(inventaireInput.value);
-      inventaireInput.value = "";
-    }
-  }
-  affichJoueur();
-  modifDisplay.style.display = "none";
-  persoDisplay.style.display = "block";
-});
