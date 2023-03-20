@@ -23,26 +23,256 @@
       <div id="persoContainer"></div>
       <div id="modifContainer">
         <!------------------------------------------------------------------BOUTON VALIDATION-->
-        <button id="vie--button">VALIDER</button>
+        <div>
+          <button id="vie--button" class="buttonValidate">VALIDER</button>
+        </div>
         <!-----------------------------------------------------modification de la santé-->
-        <h1>SANTE</h1>
-        <input type="text" placeholder="PV restant" name="" id="vie" />
-        <p>indiquer le nombre de pv restant</p>
-        <br />
-        <input type="text" placeholder="BLESSURE GRAVE" name="" id="blessure" />
-        <p>indiquer le nombre de blessures graves restantes</p>
-        <br />
-        <input type="text" placeholder="POINT DE FOLIE" name="" id="pf" />
-        <p>indiquer le nombre de PF restant</p>
-        <br />
-        <input type="text" placeholder="PC" name="" id="pc" />
-        <p>indiquer le nombre de PC restant</p>
-        <br />
-        <input type="text" placeholder="dés de vie" name="" id="desVie" />
-        <p>indiquer le montant de des de vie</p>
-        <br />
-        <input type="text" placeholder="NIVEAU" name="" id="niveau" />
-        <p>indiquer le nouveau NIVEAU</p>
+        <button id="santeModifButton" class="modifButton">SANTE</button>
+        <div id="santeModifContainer" style="display: none">
+          <input type="text" placeholder="PV restant" name="" id="vie" />
+          <p>indiquer le nombre de pv restant</p>
+          <br />
+          <input
+            type="text"
+            placeholder="BLESSURE GRAVE"
+            name=""
+            id="blessure"
+          />
+          <p>indiquer le nombre de blessures graves restantes</p>
+          <br />
+          <input type="text" placeholder="POINT DE FOLIE" name="" id="pf" />
+          <p>indiquer le nombre de PF restant</p>
+          <br />
+          <input type="text" placeholder="PC" name="" id="pc" />
+          <p>indiquer le nombre de PC restant</p>
+          <br />
+          <input type="text" placeholder="dés de vie" name="" id="desVie" />
+          <p>indiquer le montant de des de vie</p>
+          <br />
+          <input type="text" placeholder="NIVEAU" name="" id="niveau" />
+          <p>indiquer le nouveau NIVEAU</p>
+        </div>
+
+        <!-----------------------------------------------------modification des caracteristiques-->
+        <button id="caraModifButton" class="modifButton">
+          CARACTERISTIQUE
+        </button>
+        <div id="caraModifContainer" style="display: none">
+          <button class="modifSecondaireButton" id="caraBaseModifButton">
+            Valeur de base
+          </button>
+          <br />
+          <div id="caraBaseModifDisplay" style="display: none">
+            <input type="text" placeholder="VALEUR FORCE" name="" id="force" />
+            <p>indiquer le valeur de base de force</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR DEXTERITE"
+              name=""
+              id="dexte"
+            />
+            <p>indiquer le valeur de base de dexterité</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR  CONSTITUTION"
+              name=""
+              id="constitution"
+            />
+            <p>indiquer le valeur de base de constitution</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR INTELLIGENCE"
+              name=""
+              id="intelligence"
+            />
+            <p>indiquer le valeur de base de intelligence</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR PERCEPTION"
+              name=""
+              id="perception"
+            />
+            <p>indiquer le valeur de base de perception</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR CHASIRME"
+              name=""
+              id="charisme"
+            />
+            <p>indiquer le valeur de base de charisme</p>
+          </div>
+
+          <button class="modifSecondaireButton" id="caraModModifButton">
+            Valeur du 1er MOD</button
+          ><br />
+          <div style="display: none" id="caraModModifDisplay">
+            <input
+              type="text"
+              placeholder="VALEUR MOD FORCE"
+              name=""
+              id="forceMod"
+            />
+            <p>indiquer le valeur de mod de force</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR MOD DEXTERITE"
+              name=""
+              id="dexteMod"
+            />
+            <p>indiquer le valeur de mod de dexterité</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR MOD CONSTITUTION"
+              name=""
+              id="constitutionMod"
+            />
+            <p>indiquer le valeur de mod de constitution</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR MOD INTELLIGENCE"
+              name=""
+              id="intelligenceMod"
+            />
+            <p>indiquer le valeur de mod de intelligence</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR MOD PERCEPTION"
+              name=""
+              id="perceptionMod"
+            />
+            <p>indiquer le valeur de mod de perception</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR MOD CHASIRME"
+              name=""
+              id="charismeMod"
+            />
+            <p>indiquer le valeur de mod de charisme</p>
+          </div>
+          <button class="modifSecondaireButton" id="caraMod2ModifButton">
+            Valeur du 2e MOD</button
+          ><br />
+          <div style="display: none" id="caraMod2ModifDisplay">
+            <input
+              type="text"
+              placeholder="VALEUR MOD 2 FORCE"
+              name=""
+              id="forceMod2"
+            />
+            <p>indiquer le valeur de mod 2 de force</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR MOD 2 DEXTERITE"
+              name=""
+              id="dexteMod2"
+            />
+            <p>indiquer le valeur de mod 2 de dexterité</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR MOD 2 CONSTITUTION"
+              name=""
+              id="constitutionMod2"
+            />
+            <p>indiquer le valeur de mod 2 de constitution</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR MOD 2 INTELLIGENCE"
+              name=""
+              id="intelligenceMod2"
+            />
+            <p>indiquer le valeur de mod 2 de intelligence</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR MOD 2 PERCEPTION"
+              name=""
+              id="perceptionMod2"
+            />
+            <p>indiquer le valeur de mod2 de perception</p>
+            <br />
+            <input
+              type="text"
+              placeholder="VALEUR MOD 2 CHASIRME"
+              name=""
+              id="charismeMod2"
+            />
+            <p>indiquer le valeur de mod2 de charisme</p>
+          </div>
+        </div>
+        <!-----------------------------------------------------modification attaque-->
+        <button id="attaqueModifButton" class="modifButton">ATTAQUE</button>
+        <div id="attaqueModifContainer" style="display: none">
+          <button class="modifSecondaireButton" id="contactModifButton">
+            CONTACT</button
+          ><br />
+          <div style="display: none" id="contactModifDisplay">
+            <input
+              type="text"
+              placeholder="MOD CONTACT "
+              name=""
+              id="attaqueMod"
+            />
+            <p>indiquer le valeur de mod de contact</p>
+            <input
+              type="text"
+              placeholder="MOD2 CONTACT "
+              name=""
+              id="attaqueMod2"
+            />
+            <p>indiquer le valeur de mod2 de contact</p>
+          </div>
+          <button class="modifSecondaireButton" id="distanceModifButton">
+            DISTANCE</button
+          ><br />
+          <div style="display: none" id="distanceModifDisplay">
+            <input
+              type="text"
+              placeholder="MOD DISTANCE "
+              name=""
+              id="attaqueDistMod"
+            />
+            <p>indiquer le valeur de mod de distance</p>
+            <input
+              type="text"
+              placeholder="MOD2 DISTANCE "
+              name=""
+              id="attaqueDistMod2"
+            />
+            <p>indiquer le valeur de mod2 de distance</p>
+          </div>
+          <button class="modifSecondaireButton" id="magiqueModifButton">
+            MAGIQUE</button
+          ><br />
+          <div style="display: none" id="magiqueModifDisplay">
+            <input
+              type="text"
+              placeholder="MOD MAGIQUE "
+              name=""
+              id="attaqueMagiMod"
+            />
+            <p>indiquer le valeur de mod de magique</p>
+            <input
+              type="text"
+              placeholder="MOD2 MAGIQUE "
+              name=""
+              id="attaqueMagiMod2"
+            />
+            <p>indiquer le valeur de mod2 de magique</p>
+          </div>
+        </div>
 
         <!-----------------------------------------------------modification de l'inventaire-->
 
@@ -58,185 +288,6 @@
         <br />
         <input type="text" placeholder="ARGENT RESTANT" name="" id="argent" />
         <p>indiquer le nombre de $ restants</p>
-
-        <!-----------------------------------------------------modification des caracteristiques-->
-        <h1>CARACTERISTIQUE</h1>
-        <h2>Valeur de base</h2>
-        <input type="text" placeholder="VALEUR FORCE" name="" id="force" />
-        <p>indiquer le valeur de base de force</p>
-        <br />
-        <input type="text" placeholder="VALEUR DEXTERITE" name="" id="dexte" />
-        <p>indiquer le valeur de base de dexterité</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR  CONSTITUTION"
-          name=""
-          id="constitution"
-        />
-        <p>indiquer le valeur de base de constitution</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR INTELLIGENCE"
-          name=""
-          id="intelligence"
-        />
-        <p>indiquer le valeur de base de intelligence</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR PERCEPTION"
-          name=""
-          id="perception"
-        />
-        <p>indiquer le valeur de base de perception</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR CHASIRME"
-          name=""
-          id="charisme"
-        />
-        <p>indiquer le valeur de base de charisme</p>
-        <h2>Valeur du 1er MOD</h2>
-        <input
-          type="text"
-          placeholder="VALEUR MOD FORCE"
-          name=""
-          id="forceMod"
-        />
-        <p>indiquer le valeur de mod de force</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR MOD DEXTERITE"
-          name=""
-          id="dexteMod"
-        />
-        <p>indiquer le valeur de mod de dexterité</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR MOD CONSTITUTION"
-          name=""
-          id="constitutionMod"
-        />
-        <p>indiquer le valeur de mod de constitution</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR MOD INTELLIGENCE"
-          name=""
-          id="intelligenceMod"
-        />
-        <p>indiquer le valeur de mod de intelligence</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR MOD PERCEPTION"
-          name=""
-          id="perceptionMod"
-        />
-        <p>indiquer le valeur de mod de perception</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR MOD CHASIRME"
-          name=""
-          id="charismeMod"
-        />
-        <p>indiquer le valeur de mod de charisme</p>
-        <h2>Valeur du 2e MOD</h2>
-        <input
-          type="text"
-          placeholder="VALEUR MOD 2 FORCE"
-          name=""
-          id="forceMod2"
-        />
-        <p>indiquer le valeur de mod 2 de force</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR MOD 2 DEXTERITE"
-          name=""
-          id="dexteMod2"
-        />
-        <p>indiquer le valeur de mod 2 de dexterité</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR MOD 2 CONSTITUTION"
-          name=""
-          id="constitutionMod2"
-        />
-        <p>indiquer le valeur de mod 2 de constitution</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR MOD 2 INTELLIGENCE"
-          name=""
-          id="intelligenceMod2"
-        />
-        <p>indiquer le valeur de mod 2 de intelligence</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR MOD 2 PERCEPTION"
-          name=""
-          id="perceptionMod2"
-        />
-        <p>indiquer le valeur de mod2 de perception</p>
-        <br />
-        <input
-          type="text"
-          placeholder="VALEUR MOD 2 CHASIRME"
-          name=""
-          id="charismeMod2"
-        />
-        <p>indiquer le valeur de mod2 de charisme</p>
-        <!-----------------------------------------------------modification attaque-->
-        <h1>ATTAQUE</h1>
-        <h2>CONTACT</h2>
-        <input type="text" placeholder="MOD CONTACT " name="" id="attaqueMod" />
-        <p>indiquer le valeur de mod de contact</p>
-        <input
-          type="text"
-          placeholder="MOD2 CONTACT "
-          name=""
-          id="attaqueMod2"
-        />
-        <p>indiquer le valeur de mod2 de contact</p>
-        <h2>DISTANCE</h2>
-        <input
-          type="text"
-          placeholder="MOD DISTANCE "
-          name=""
-          id="attaqueDistMod"
-        />
-        <p>indiquer le valeur de mod de distance</p>
-        <input
-          type="text"
-          placeholder="MOD2 DISTANCE "
-          name=""
-          id="attaqueDistMod2"
-        />
-        <p>indiquer le valeur de mod2 de distance</p>
-        <h2>MAGIQUE</h2>
-        <input
-          type="text"
-          placeholder="MOD MAGIQUE "
-          name=""
-          id="attaqueMagiMod"
-        />
-        <p>indiquer le valeur de mod de magique</p>
-        <input
-          type="text"
-          placeholder="MOD2 MAGIQUE "
-          name=""
-          id="attaqueMagiMod2"
-        />
-        <p>indiquer le valeur de mod2 de magique</p>
       </div>
     </div>
 

@@ -19,7 +19,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: azure;
-  padding-top: 50%;
+  padding-top: 200px;
 }
 #choixDisplay p {
   margin-left: 6px;
@@ -37,18 +37,21 @@ body {
   width: 100px;
   height: 50px;
 }
-/*-------------------------------------------------------INFOS JOUEUR*/
-#persoContainer {
-  width: 100vw;
+/*-------------------------------------------------------INFOS JOUEUR en haut*/
+#showDescription {
+  display: none;
+  background-color: rgb(110, 68, 68);
 }
-
+#showInventaire {
+  display: none;
+  background-color: rgb(110, 68, 68);
+}
 .name p {
   font-size: 22px;
 }
 .header--button {
   margin-bottom: 20px;
 }
-
 .header--button--button {
   font-family: "Edu VIC WA NT Beginner", cursive;
   text-transform: uppercase;
@@ -57,18 +60,6 @@ body {
   border-radius: 10px;
   cursor: pointer;
   border: none;
-}
-#modifContainer {
-  display: none;
-}
-
-#showDescription {
-  display: none;
-  background-color: rgb(110, 68, 68);
-}
-#showInventaire {
-  display: none;
-  background-color: rgb(110, 68, 68);
 }
 
 .infoHeader {
@@ -83,7 +74,7 @@ body {
   height: 50px;
   width: 100px;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 10px;
   background-color: rgb(113, 90, 61);
 }
 .infoHeader--pvRestant {
@@ -92,44 +83,88 @@ body {
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 30px;
+  border-radius: 10px;
   background-color: rgb(76, 181, 44);
 }
 .infoHeader--des {
   width: 100px;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 10px;
   background-color: rgb(113, 90, 61);
 }
-.infoHeaderDown {
-  align-items: center;
-  background-color: burlywood;
-  height: 40px;
+/*-----------------------------------------------------------------------------------INFOS JOUEUR*/
+.down {
+  display: flex;
+  width: 100vw;
+  overflow: scroll;
+  background-color: rgb(66, 63, 63);
+  padding-top: 30px;
 }
+.infoTop {
+  height: 164px;
+  background-color: rgb(66, 63, 63);
+}
+.modification-Button-Container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.marginLeft {
+  margin-left: 20px;
+  margin-top: 0px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.cardContent {
+  padding-top: 18px;
+}
+
+.card {
+  width: 95vw;
+  margin-top: 10px;
+  margin: auto;
+  height: 320px;
+  margin-top: 0px;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.cardInside {
+  width: 95vw;
+  background-color: antiquewhite;
+  margin: auto;
+  height: 250px;
+  margin-top: 0px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.infoHeaderDown {
+  background-color: burlywood;
+  height: 30px;
+  width: 95vw;
+  background-color: rgb(66, 63, 63);
+
+  margin: auto;
+}
+
 .cara--title {
   background-color: rgb(12, 73, 12);
-  cursor: pointer;
 }
-.caracteristique {
-  display: none;
-  justify-content: space-around;
-  background-color: rgb(15, 87, 15);
-}
+
 .PC {
   background-color: rgb(89, 17, 156);
-  cursor: pointer;
 }
 .folie--choc--container {
-  display: none;
   background-color: rgb(102, 19, 181);
 }
 
 .attaque--container {
-  display: none;
   background-color: brown;
 }
 .attaque--title {
-  cursor: pointer;
   background-color: rgb(141, 35, 35);
 }
 .defence {
@@ -137,11 +172,9 @@ body {
 }
 
 .capacite--title {
-  padding-top: 15px;
   text-align: center;
   align-items: center;
   background-color: rgb(154, 70, 34);
-  height: 40px;
 }
 .capacite--container {
   background-color: rgb(177, 79, 37);
@@ -156,7 +189,11 @@ body {
   display: flex;
   justify-content: space-around;
 }
+
 /*----------------------------------------------------------------PAGE MODIFICATION*/
+#modifContainer {
+  display: none;
+}
 #modifContainer {
   text-align: center;
   justify-content: center;
@@ -175,4 +212,22 @@ body {
   border-radius: 50%;
   width: 100px;
   height: 100px;
+}
+
+.buttonValidate {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.modifButton {
+  width: 70vw;
+  height: 50px;
+}
+.modifSecondaireButton {
+  width: 60vw;
+  height: 40px;
+}
+
+.modifDisplay {
+  display: none;
 }

@@ -297,6 +297,8 @@ const personnage = [
   },
 ];
 
+//-------------------------------------------------------choix du joueur
+
 const choixJoueur = document.getElementById("choixJoueur");
 const choixJoueurDisplay = document.getElementById("choixDisplay");
 contentChoixJoueur = "";
@@ -360,7 +362,7 @@ joueurChoisi.forEach(bouton => {
     const cara = personnage[persoIndex].caracteristique;
 
     validButton.addEventListener("click", function () {
-      //---------------------------------------------PV
+      //-------------------------------------------------------------------PV
       if (vieInput.value !== "") {
         personnage[persoIndex].PVrestant = vieInput.value;
         vieInput.value = "";
@@ -552,167 +554,223 @@ function affichJoueur() {
   const def = personnage[persoIndex].defence;
   const cara = personnage[persoIndex].caracteristique;
   contentJeu = ` 
-                <div class="name flexAround">
-                    <p>${personnage[persoIndex].name}</p> 
-                    <p>${personnage[persoIndex].profil} </p>
+                    <div class="infoTop" >
+                            <div class="name flexAround">
+                                      <p>${personnage[persoIndex].name}</p> 
+                                      <p>${personnage[persoIndex].profil} </p>
+                            </div>
+                            <div class="infoHeader flexAround">
+                                  <div class="infoHeader--niveau"> 
+                                    <p >Niveau : ${
+                                      personnage[persoIndex].niveau
+                                    }</p>
+                                  </div>
+                                  <div class="infoHeader--des"> 
+                                      <p>Dés vie: ${
+                                        personnage[persoIndex].déVie
+                                      }</p>
+                                  </div>
+                                  <div class="infoHeader--pvRestant"> 
+                                    <p>Point de vie restant : ${
+                                      personnage[persoIndex].PVrestant
+                                    }</p>
+                                  </div>
+                                  
+                            </div>
+                            
+                            <div class="infoHeaderDown flexAround">   
+                            
+                                <div class ="">Point de vie (de base) : ${
+                                  personnage[persoIndex].PV
+                                }</div>
+                                <div class="">Blessure grave : ${
+                                  personnage[persoIndex].blessureGrave
+                                }</div>
+
+                            </div>
+                            
+                    </div>      
+                   <div class="down">  
+
+                            
+                        
+                        
+                        <div class="card">
+                        <div class="cara--title cardInside" id="cara--button">
+                           <div class="cardContent">
+                            <p class="marginLeft">CARACTERISTIQUE</p> 
+                                  <div class="flexAround ">                  
+                                      <p>TYPE</p>
+                                      <p>FOR</p>
+                                      <p>DEX</p>
+                                      <p>CON</p>
+                                      <p>INT</p>
+                                      <p>PER</p>
+                                      <p>CHA</p>
+                                  </div>
+                                  <div class="flexAround "> 
+                                        <p>VALEUR</p>
+                                      <p>${cara.force.valeur}</p>
+                                      <p>${cara.dexterite.valeur}</p>
+                                      <p>${cara.constitution.valeur}</p>
+                                      <p>${cara.intelligence.valeur}</p>
+                                      <p>${cara.perception.valeur}</p>
+                                      <p>${cara.charisme.valeur}</p>
+                                  </div>
+                                  <div class="flexAround">
+                                      <p>MOD</p>
+                                      <p>${cara.force.mod}</p>
+                                      <p>${cara.dexterite.mod}</p>
+                                      <p>${cara.constitution.mod}</p>
+                                      <p>${cara.intelligence.mod}</p>
+                                      <p>${cara.perception.mod}</p>
+                                      <p>${cara.charisme.mod}</p> 
+                                  </div>
+                                  <div class="flexAround ">
+                                      <p>MOD2</p>
+                                      <p>${cara.force.mod2}</p>
+                                      <p>${cara.dexterite.mod2}</p>
+                                      <p>${cara.constitution.mod2}</p>
+                                      <p>${cara.intelligence.mod2}</p>
+                                      <p>${cara.perception.mod2}</p>
+                                      <p>${cara.charisme.mod2}</p> 
+                                  </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        
+                        <div class="card">
+                              <div class="attaque--title cardInside " id="att--button">
+                                    <div class="cardContent">
+                                        <p class="marginLeft">ATTAQUE</p>   
+                                          <div class="flexAround">
+                                              <p>ATTAQUE</p>
+                                              <p>CONTACT</p>
+                                              <p>DISTANCE</p>
+                                              <p>MAGIQUE</p>
+                                          </div>
+
+                                          <div class="flexAround">
+                                              <p>MOD</p>
+                                              <p>${att.contact.mod1}</p>
+                                              <p>${att.distance.mod1}</p>
+                                              <p>${
+                                                att.magique.mod1
+                                              }</p>            
+                                          </div>
+
+                                          <div class="flexAround">
+                                                  <p>MOD2</p>
+                                              <p>${att.contact.mod2}</p>
+                                              <p>${att.distance.mod2}</p>
+                                              <p>${att.magique.mod2}</p>
+                                          </div>                                 
+                                    </div>                                 
+                              </div>
+                        </div>
+
+                       
+                        <div class="card">
+                            <div class="defence cardInside " >
+                                <div class="cardContent">
+                                    <p class="marginLeft">DEFENCE</p>
+                                        <div class="flexAround">
+                                        <p> BASE : ${def.base}</p>
+                                        <p> MOD : ${def.mod}</p>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                              <div class="PC cardInside" id="pc--button">
+                                    <div class="cardContent">
+                                    <p class="marginLeft">POINT CHOC</p>
+
+                                        <div class="flexAround">
+                                            <p>BASE : ${PC.base}</p>
+                                            <p>MOD : ${PC.mod}</p>
+                                        </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div class="card">
+                              <div class="folie--choc--container cardInside " id="showPc">
+                                  <div class="cardContent">
+                                        <div class="folie-choc flexAround ">
+                                            <p>POINTS DE FOLIE</p>
+                                            <p>PC RESTANT</p>
+                                        </div>
+                                        <div class="folie-choc--info flexAround">
+                                            <p>${PC.PointFolie}</p>
+                                            <p>${PC.PCrestant}</p>
+                                        </div>
+                                  </div>
+                                </div>
+                        </div>
+
+
+                      <div class="card">
+                        <div class="capacite--container cardInside">
+                            <div class="cardContent">
+                                <p class="marginLeft">CAPACITE</p>
+
+                                    <div class="capacite--voie flexAround ">
+                                        <p>${capacity.capacite1.voie} </p>
+                                        <p>${capacity.capacite2.voie}</p>
+                                        <p>${capacity.capacite3.voie}</p>
+                                    </div>
+                                    <div class="capacite--niveau flexAround ">
+                                        <p>NIV :${
+                                          capacity.capacite1.niveau
+                                        } </p>
+                                        <p>NIV :${capacity.capacite2.niveau}</p>
+                                        <p>NIV :${capacity.capacite3.niveau}</p>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                         
                 </div>
 
-                <div class="header--button flexAround">
+                <div class="modification-Button-Container flexAround">
                     <button class="modif header--button--button" id="modifButton">Modification</button>
-                    <button class="description header--button--button" id="descriptionButton">Descritpion</button>
-                    <button class="inventaire header--button--button" id="inventaireButton">Inventaire</button>
-                </div>
-                <div id="showDescription"> <p> Sexe : ${descript.sexe}</p>
-                    <p> Age : ${descript.age}</p>
-                    <p> Poids : ${descript.Poids}</p>
-                    <p> Taille : ${descript.taille}</p>
-                    <p> Langues : ${descript.langues}</p>
                 </div>
 
-                <div id="showInventaire"
-                    <p class="argent">Argent: ${
-                      personnage[persoIndex].argent
-                    } $</p>
-                    <div class="inventaire">Inventaire:
-                        <p> ${personnage[persoIndex].inventaire.join(" - ")}</p>
-                    </div>
-
-                    <div class="arme">Armes :
-                    <p> Nom : ${gun.nom}</p>
-                    <p> Degat : ${gun.degat}</p>
-                    </div>
-                </div>
-
-                <div class="infoHeader flexAround">
-                    <div class="infoHeader--niveau"> 
-                      <p >Niveau : ${personnage[persoIndex].niveau}</p>
-                    </div>
-                    <div class="infoHeader--des"> 
-                        <p>Dés vie: ${personnage[persoIndex].déVie}</p>
-                    </div>
-                    <div class="infoHeader--pvRestant"> 
-                       <p>Point de vie restant : ${
-                         personnage[persoIndex].PVrestant
-                       }</p>
-                    </div>
-                </div>
+                <div class="top">
+                            
+                <div class="header--button flexAround">
                 
-                <div class="infoHeaderDown flexAround">   
-                    <div class ="pv">Point de vie (de base) : ${
-                      personnage[persoIndex].PV
-                    }</div>
-                    <div class="blessure">Blessure grave : ${
-                      personnage[persoIndex].blessureGrave
-                    }</div>
-                </div>
+                <button class="description header--button--button" id="descriptionButton">Descritpion</button>
+                <button class="inventaire header--button--button" id="inventaireButton">Inventaire</button>
+            </div>
+            <div id="showDescription"> 
+                <p> Sexe : ${descript.sexe}</p>
+                <p> Age : ${descript.age}</p>
+                <p> Poids : ${descript.Poids}</p>
+                <p> Taille : ${descript.taille}</p>
+                <p> Langues : ${descript.langues}</p>
+            </div>
+                            <div id="showInventaire"
+                                <p class="argent">Argent: ${
+                                  personnage[persoIndex].argent
+                                } $</p>
+                                <div class="inventaire">Inventaire:
+                                    <p> ${personnage[
+                                      persoIndex
+                                    ].inventaire.join(" - ")}</p>
+                                </div>
 
-                <div class="cara--title flexAround" id="cara--button">
-                    <p>CARACTERISTIQUE</p>
-                    <p>VALEUR</p>
-                    <p>MOD</p>
-                    <p>MOD2</p>
-                </div>
+                                <div class="arme">Armes :
+                                    <p> Nom : ${gun.nom}</p>
+                                    <p> Degat : ${gun.degat}</p>
+                                </div>
+                            </div>
 
-                <div class="caracteristique" id="showCara"> 
-
-                    <div class="caracteristique--carac"> 
-                        <p>FORCE</p>
-                        <p>DEXTERITE</p>
-                        <p>CONSTITUTION</p>
-                        <p>INTELLIGENCE</p>
-                        <p>PERCEPTION</p>
-                        <p>CHARISME</p>
-                    </div>
-                    <div class="caracteristique--valeur"> 
-                        <p>${cara.force.valeur}</p>
-                        <p>${cara.dexterite.valeur}</p>
-                        <p>${cara.constitution.valeur}</p>
-                        <p>${cara.intelligence.valeur}</p>
-                        <p>${cara.perception.valeur}</p>
-                        <p>${cara.charisme.valeur}</p>
-                    </div>
-                    <div class="caracteristique--mod">
-                        <p>${cara.force.mod}</p>
-                        <p>${cara.dexterite.mod}</p>
-                        <p>${cara.constitution.mod}</p>
-                        <p>${cara.intelligence.mod}</p>
-                        <p>${cara.perception.mod}</p>
-                        <p>${cara.charisme.mod}</p> 
-                    </div>
-                    <div class="caracteristique--modDeux">
-                        <p>${cara.force.mod2}</p>
-                        <p>${cara.dexterite.mod2}</p>
-                        <p>${cara.constitution.mod2}</p>
-                        <p>${cara.intelligence.mod2}</p>
-                        <p>${cara.perception.mod2}</p>
-                        <p>${cara.charisme.mod2}</p> 
-                    </div>
-
-                </div>
-                <div class="attaque--title flexAround" id="att--button">
-                            <p>ATTAQUE</p>
-                            <p>MOD</p>
-                            <p>MOD2</p>
-                    </div>
-                <div class="attaque--container" id="showAttaque">
-                    
-
-                    <div class="attaque flexAround">
-                        <div class="attaque--type">
-                            <p>CONTACT</p>
-                            <p>DISTANCE</p>
-                            <p>MAGIQUE</p>
-                        </div>
-
-                        <div class="attaque--modUn">
-                            <p>${att.contact.mod1}</p>
-                            <p>${att.distance.mod1}</p>
-                            <p>${att.magique.mod1}</p>            
-                        </div>
-
-                        <div class="attaque--modDeux">
-                            <p>${att.contact.mod2}</p>
-                            <p>${att.distance.mod2}</p>
-                            <p>${att.magique.mod2}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="defence flexAround" >
-                            <p>DEFENCE</p>
-                            <p>${def.base}</p>
-                            <p>${def.mod}</p>
-                </div>
-                <div class="PC flexAround" id="pc--button">
-                            <p>POINT CHOC</p>
-                            <p>${PC.base}</p>
-                            <p>${PC.mod}</p>
-                    </div>
-                <div class="folie--choc--container" id="showPc">
-                    
-                    <div class="folie-choc flexAround">
-                        <p>POINTS DE FOLIE</p>
-                        <p>PC RESTANT</p>
-                    </div>
-                    <div class="folie-choc--info flexAround">
-                        <p>${PC.PointFolie}</p>
-                        <p>${PC.PCrestant}</p>
-                    </div>
-                </div>
-               
-                <div class="capacite--container">
-                    <div class="capacite--title">CAPACITE</div>
-
-                    <div class="capacite--voie flexAround">
-                        <p>${capacity.capacite1.voie} </p>
-                        <p>${capacity.capacite2.voie}</p>
-                        <p>${capacity.capacite3.voie}</p>
-                    </div>
-                    <div class="capacite--niveau flexAround">
-                        <p>NIV :${capacity.capacite1.niveau} </p>
-                        <p>NIV :${capacity.capacite2.niveau}</p>
-                        <p>NIV :${capacity.capacite3.niveau}</p>
-                    </div>
-                </div>`;
+                            
+                            </div>`;
 
   affichInfo.innerHTML = contentJeu;
   //------------------------------------------afficher caracteristisque
@@ -731,8 +789,8 @@ function affichJoueur() {
   const attDisplay = document.getElementById("showAttaque");
 
   attButton.addEventListener("click", function () {
-    if (attDisplay.style.display !== "block") {
-      attDisplay.style.display = "block";
+    if (attDisplay.style.display !== "flex") {
+      attDisplay.style.display = "flex";
     } else {
       attDisplay.style.display = "none";
     }
@@ -780,4 +838,103 @@ function affichJoueur() {
       inventDisplay.style.display = "none";
     }
   });
+}
+//-------------------------------------------------------gerer les affichages de l'inventaire inventaire
+
+let santeButton = document.getElementById("santeModifButton");
+let caraButton = document.getElementById("caraModifButton");
+let attaqueButton = document.getElementById("attaqueModifButton");
+let santeDisplay = document.getElementById("santeModifContainer");
+let caraDisplay = document.getElementById("caraModifContainer");
+let attaqueDisplay = document.getElementById("attaqueModifContainer");
+
+santeButton.addEventListener("click", affichSante);
+caraButton.addEventListener("click", affichCara);
+attaqueButton.addEventListener("click", affichAttaque);
+
+function affichSante() {
+  if (santeDisplay.style.display !== "none") {
+    santeDisplay.style.display = "none";
+  } else {
+    santeDisplay.style.display = "block";
+  }
+}
+function affichCara() {
+  if (caraDisplay.style.display !== "none") {
+    caraDisplay.style.display = "none";
+  } else {
+    caraDisplay.style.display = "block";
+  }
+}
+function affichAttaque() {
+  if (attaqueDisplay.style.display !== "none") {
+    attaqueDisplay.style.display = "none";
+  } else {
+    attaqueDisplay.style.display = "block";
+  }
+}
+
+let caraBaseButton = document.getElementById("caraBaseModifButton");
+let caraModButton = document.getElementById("caraModModifButton");
+let caraMod2Button = document.getElementById("caraMod2ModifButton");
+let caraBaseDisplay = document.getElementById("caraBaseModifDisplay");
+let caraModDisplay = document.getElementById("caraModModifDisplay");
+let caraMod2Display = document.getElementById("caraMod2ModifDisplay");
+
+caraBaseButton.addEventListener("click", affichCaraBase);
+caraModButton.addEventListener("click", affichModBase);
+caraMod2Button.addEventListener("click", affichMod2Base);
+
+function affichCaraBase() {
+  if (caraBaseDisplay.style.display !== "none") {
+    caraBaseDisplay.style.display = "none";
+  } else {
+    caraBaseDisplay.style.display = "block";
+  }
+}
+function affichModBase() {
+  if (caraModDisplay.style.display !== "none") {
+    caraModDisplay.style.display = "none";
+  } else {
+    caraModDisplay.style.display = "block";
+  }
+}
+function affichMod2Base() {
+  if (caraMod2Display.style.display !== "none") {
+    caraMod2Display.style.display = "none";
+  } else {
+    caraMod2Display.style.display = "block";
+  }
+}
+let contactButton = document.getElementById("contactModifButton");
+let distanceButton = document.getElementById("distanceModifButton");
+let magiqueButton = document.getElementById("magiqueModifButton");
+let contactDisplay = document.getElementById("contactModifDisplay");
+let distanceDisplay = document.getElementById("distanceModifDisplay");
+let magiqueDisplay = document.getElementById("magiqueModifDisplay");
+
+contactButton.addEventListener("click", affichContact);
+distanceButton.addEventListener("click", affichDistance);
+magiqueButton.addEventListener("click", affichMagique);
+
+function affichContact() {
+  if (contactModifDisplay.style.display !== "none") {
+    contactModifDisplay.style.display = "none";
+  } else {
+    contactModifDisplay.style.display = "block";
+  }
+}
+function affichDistance() {
+  if (distanceModifDisplay.style.display !== "none") {
+    distanceModifDisplay.style.display = "none";
+  } else {
+    distanceModifDisplay.style.display = "block";
+  }
+}
+function affichMagique() {
+  if (magiqueModifDisplay.style.display !== "none") {
+    magiqueModifDisplay.style.display = "none";
+  } else {
+    magiqueModifDisplay.style.display = "block";
+  }
 }
